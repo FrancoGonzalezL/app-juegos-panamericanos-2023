@@ -1,14 +1,14 @@
-const populateGraph = (id_graph, title, yLabel, animation, categories, data) => {
-    Highcharts.chart(id_graph, {
+const populateGraph = (info, ajaxR, animation) => {
+    Highcharts.chart(info["id"], {
         chart: {
             type: 'bar'
         },
         title: {
-            text: title,
+            text: info["title"],
             align: 'left'
         },
         xAxis: {
-            categories: categories,
+            categories: ajaxR["categories"],
             title: {
                 text: "Categorías"
             },
@@ -18,7 +18,7 @@ const populateGraph = (id_graph, title, yLabel, animation, categories, data) => 
         yAxis: {
             min: 0,
             title: {
-                text: yLabel,
+                text: info["xlabel"],
                 align: 'high'
             },
             labels: {
@@ -46,21 +46,20 @@ const populateGraph = (id_graph, title, yLabel, animation, categories, data) => 
         },
         series: [{
             name:'',
-            data: data,
+            data: ajaxR["data"],
         }]
     });
 };
 
-let fetchAJAX = (id_graph, title, yLabel, animation, url) => {
-    fetch(url)
+let fetchAJAX = (info, animation) => {
+    fetch(info["url"])
         .then((response) => {
             if (!response.ok)
                 throw new Error("Network response was not ok");
             return response.json();
         })
         .then((ajaxResponse) => {
-            populateGraph(id_graph, title, yLabel, animation,
-                ajaxResponse["data"]["categories"], ajaxResponse["data"]["data"]);
+            populateGraph(info, ajaxResponse["data"], animation);
         })
         .catch((error) => {
             console.error(
@@ -70,11 +69,15 @@ let fetchAJAX = (id_graph, title, yLabel, animation, url) => {
         });
 };
 
-setInterval(handleAJAX => {
-    fetchAJAX('grafico_hinchas', 'Estadísticas Hinchas', 'Hinchas por Deporte', false, url_grafico_hinchas);
-    fetchAJAX('grafico_artesanos', 'Estadísticas Artesanos', 'Artesanos por Artesanía', false, url_grafico_artesanos);
+const dic_hinchas = {"id":"grafico_hinchas",   "titulo":"Estadísticas Hinchas",   "xlabel":"Hinchas por Deporte",     "url":url_grafico_hinchas};
+const dic_artesan = {"id":"grafico_artesanos", "titulo":"Estadísticas Artesanos", "xlabel":"Artesanos por Artesanía", "url":url_grafico_artesanos};
+
+setInterval(_ => {
+    fetchAJAX(dic_hinchas, false);
+    fetchAJAX(dic_artesan, false);
 }, 2000);
-fetchAJAX('grafico_artesanos', 'Estadísticas Artesanos', 'Artesanos por Artesanía', true, url_grafico_artesanos);
-fetchAJAX('grafico_hinchas', 'Estadísticas Hinchas', 'Hinchas por Deporte', true, url_grafico_hinchas);
+
+fetchAJAX(dic_hinchas, true);
+fetchAJAX(dic_artesan, true);
 
 
