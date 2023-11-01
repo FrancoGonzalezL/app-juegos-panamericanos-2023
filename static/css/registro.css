@@ -1,0 +1,119 @@
+.container{
+    margin-top: 30px;
+    background-color: #c6f0f0;        
+    border-radius: 30px;
+
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 1%;
+    padding-bottom: 5%;
+}
+
+form{
+    margin-top: 5%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.inputUser{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    border-bottom: 3px solid black;
+    background-color: #f29292;
+    width: 50%;
+    margin-bottom: 10px;
+    font-size: 150%;
+    cursor: pointer;
+    padding: 1%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+select{
+    text-align: center;
+    font-size: 120%;
+    padding: 1%;
+    cursor: pointer;
+}
+
+input{
+    font-size: 140%;
+    padding: 2%;
+}
+
+#titulo{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 300%;
+}
+
+#comentarios{
+    font-size: 150%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 40px;
+    max-height: 300%;
+}
+#description{
+    font-size: 150%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 40px;
+    max-height: 300%;
+}
+
+.textoConfirmacion{
+    font-size: 150%;
+}
+
+.opciones{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+}
+
+#submitBtn {
+    width: 250px;
+    height: 80px;
+}
+
+.button-conf{
+    background-color: #ffd4d4;
+
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid black;
+    border-radius: 10px;
+
+    width: 300px;
+    height: 80px;
+
+    cursor: pointer;
+
+    color: black;
+    font-size: 120%;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.button-conf:hover{
+    animation: anim-btn 0.2s ease-in-out forwards;
+}

@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+
+{% block title %} Juegos Panamericanos Chile {% endblock %}
+{% block css %} <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/index.css')}}"> {% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="logo-inicio">
+        <img src="{{url_for('static', filename='img/logo-inicio.png')}}"  alt="Juegos Panamericanos 2023" id="logo-inicio"> 
+    </div>
+    
+    <a href="{{url_for('registrar_hincha')}}"      class="button"> Registrar hincha         </a>
+    <a href="{{url_for('registrar_artesano')}}"    class="button"> Registrar artesano       </a>
+    <a href="{{url_for('ver_hinchas', page=0)}}"   class="button"> Ver listado de hinchas   </a>
+    <a href="{{url_for('ver_artesanos', page=0)}}" class="button"> Ver listado de artesanos </a>
+    <a href="{{url_for('estadisticas')}}"          class="button"> Ver Estadísticas         </a>
+</div>
+{% endblock %}
+{% block js%}{% endblock %}

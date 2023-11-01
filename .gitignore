@@ -1,0 +1,8 @@
+secret/*
+
+venv
+*__pycache__
+
+/static/uploads/*
+
+
