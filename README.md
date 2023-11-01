@@ -1,16 +1,14 @@
-Franco González
+### Franco González L.
 
-====================
-TAREA 3
-====================
+================================================================================================================
+#### 01 / 11 / 23
 
 - Los gráficos se recargan cada 2 segundos con información de la base de datos.
 
 - El icono de la barra de navegación lleva al inicio.
 
-====================
-TAREA 2
-====================
+================================================================================================================
+#### 23 / 10 / 23
 
 - Ahora para artesanias, se muestran varias opciones y se puede seleccionar más de una con ctrl+click_izq,
 se guardaran todos los elementos seleccionados y se motraran todos al ver la información del artesano.
@@ -21,9 +19,8 @@ no se mostrarán todas las imagenes subidas (solo por diseño de la aplicación)
 - Si no hay artesanos registrados en la base de datos, no se mostrará la página para ver artesanos.
 
 
-====================
-TAREA 1
-====================
+================================================================================================================
+#### 21 / 09 / 23
 
 - Se utilizaron expresiones regulares para algunas validaciones.
 
