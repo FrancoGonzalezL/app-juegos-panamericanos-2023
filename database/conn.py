@@ -1,6 +1,6 @@
 import pymysql
 
-DB_NAME = "tarea2"
+DB_NAME = "appjuegospanamericanos"
 DB_USERNAME = "cc5002"
 DB_PASSWORD = "programacionweb"
 DB_HOST = "localhost"

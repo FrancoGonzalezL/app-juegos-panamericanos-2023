@@ -1,3 +1,5 @@
+use `appjuegospanamericanos`;
+
 INSERT INTO deporte (nombre) VALUES ("Clavados");
 INSERT INTO deporte (nombre) VALUES ("Natación");
 INSERT INTO deporte (nombre) VALUES ("Natación artística");

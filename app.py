@@ -16,8 +16,9 @@ app.config["UPLOAD_FOLDER"] = "static/uploads"
 Transportes_disponibles = ["Particular", "Locomoción pública"]
 
 ## To read the secret key
-with open("./secret/secretkey.txt", "r") as keyFile:
-    app.secret_key = keyFile.read()
+#with open("./secret/secretkey.txt", "r") as keyFile:
+    #app.secret_key = keyFile.read()
+app.secret_key = "1234"
 
 
 """ Pagina de inicio """
@@ -55,7 +56,7 @@ def submited_hincha():
             for sport in sports:
                 db.insert_hincha_deporte(id_hincha, sport)
             return render_template("agregar/submit/submited-hincha.html")
-        except:
+        except Exception as e:
             session["err_hincha"] = ["error al agregar hincha"]
             return redirect(url_for("registrar_hincha"))
     else:
@@ -104,7 +105,8 @@ def submited_artesano():
             for artesania in artesanias:
                 db.insert_artesano_tipo(id_artesano, artesania)
             return render_template("agregar/submit/submited-artesano.html")
-        except:
+        except Exception as e:
+            print(e)
             session["err_artesano"] = ["error al agregar artesano"]
             return redirect(url_for("registrar_artesano"))
 
@@ -121,6 +123,7 @@ def ver_hinchas(page):
     maxPage = (db.get_total_tabla("hincha")-1)//5
     if page > maxPage:
         return redirect(url_for("ver_hinchas", page=maxPage))
+    #hinchas = getFromDB.hinchas(offset=page*5)
     hinchas = getFromDB.hinchas(offset=page*5)
     page_info = {"current":page,"max":maxPage}
     return render_template("ver/ver-hinchas.html", hinchas=hinchas, page_info=page_info)
