@@ -1,0 +1,75 @@
+.navbar{
+    background-color: #009999;
+    border-left: solid 6px rgb(23, 47, 78);
+    border-bottom: solid 6px rgb(23, 47, 78);
+    border-radius: 20px;
+
+    min-width: 95%;
+    padding: 5px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+
+.navbar .logo {
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.navbar .options {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2%;
+    width: 100%;
+    padding-right: 30px;
+}
+
+.navbar .logo img {
+    width:  60px;
+    height: 60px;
+}
+
+.navbar .option {
+    text-decoration: underline;
+    text-align: center;
+
+    cursor: pointer;
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.navbar button{
+    background-color: #ffd4d4;
+
+    margin-left: 25%;
+    margin-right: 25%;
+
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid black;
+    border-radius: 10px;
+
+    height: 100px;
+    width:  50%;
+
+    cursor: pointer;
+
+    color: black;
+    font-size: 170%;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.navbar button:hover{
+    animation: anim-btn 0.2s ease-in-out forwards;
+}
