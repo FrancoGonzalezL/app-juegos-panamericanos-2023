@@ -27,7 +27,7 @@
 
 }
 
-button {
+.container a {
     background-color: #ffd4d4;
 
     margin-left: 25%;
@@ -52,6 +52,6 @@ button {
     font-family: 'Times New Roman', Times, serif;
 }
 
-button:hover {
+.container a:hover {
     animation: anim-btn 0.2s ease-in-out forwards;
 }
