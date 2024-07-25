@@ -1,3 +1,5 @@
-module github.com/frgonzal/app-juegos-panamericanos-2023
+module github.com/frgonzal/juegos-panamericanos
 
 go 1.22.5
+
+require github.com/gorilla/mux v1.8.1 // indirect
